@@ -1,0 +1,217 @@
+/*
+// Burger (**==MW==**) ====================================================================================================//
+
+// Запрещаем скролл основного контента при открытом бургере
+body._lock {
+	overflow: hidden;
+}
+// Прячем бургер на больших экранах
+.menu__icon {
+	display: none;
+}
+
+@media (max-width: $mobile) {
+	.menu__icon {
+		display: block;
+		position: relative;
+		width: rem(30);
+		height: rem(18);
+		cursor: pointer;
+		z-index: 5;
+	// Три полоски
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: rem(2); //10%
+			background-color: #fff;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - rem(1)); //transform: scale(1) translate(0px -50%);
+		}
+	}
+
+	.menu__icon._active {
+		span {
+			width: 0;
+		}
+		&::before,
+		&::after {
+		}
+		&::before {
+			top: calc(50% - rem(1));
+			transform: rotate(-45deg);
+		}
+		&::after {
+			bottom: calc(50% - rem(1));
+			transform: rotate(45deg);
+		}
+	}
+
+	.menu__body {
+		position: fixed;
+		top: 0;
+		left: -100%;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.9);
+		padding: 100px 30px 30px 30px;
+		transition: left 0.3s ease 0s;
+		overflow: auto; // Добавляем скролл
+
+		// Рисуем шапку
+		&::before {
+			content: '';
+			position: fixed;
+			width: 100%;
+			top: 0;
+			left: 0;
+			height: 70px; // Высота шапки
+			background-color: #912105;
+			z-index: 2;
+		}
+	}
+
+	// Выезд меню-бургера при нажатии на бургер
+	.menu__body._active {
+		left: 0;
+	}
+}
+*/
+//* header ====================================================================================================//
+
+.header {
+	&__container {
+	}
+	&__menu {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		//background-color: #b6b6b6;
+		min-height: 80px;
+	}
+}
+.menu {
+	&__icon {
+		display: none;
+	}
+	&__logo {
+		color: #000;
+		font-family: $pop;
+		font-size: 24px;
+		font-weight: 500;
+		margin-right: 30px;
+	}
+	&__body {
+	}
+	&__list {
+		display: flex;
+		li:not(:last-child){
+			@include adaptiveValue("margin-right", 30, 25, 1120, 800, 1);
+		}
+	}
+	&__manage {
+	}
+}
+.menu-link {
+	font-family: $grot;
+	color: #6C7275;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 170%;
+	transition: all 0.3s ease 0s;
+	&._active{
+		color: #000;
+	}
+	&:hover{
+		color: #38CB89;
+	}
+}
+
+.manage-menu {
+	display: flex;
+	gap: 16px;
+	align-items: center;
+	&__search {
+		height: 30px;
+	}
+	&__profile {
+	}
+	&__cart {
+		position: relative;
+		margin-right: 25px;
+		&::before{
+			content: '2';
+			font-size: 11px;
+			font-family: inter;
+			padding-top: 3px;
+			padding-right: 1px;
+			position: absolute;
+			top: 1px;
+			right: -22px;
+			height: 20px;
+			width: 20px;
+			background-color: #000;
+			color: #fff;
+			border-radius: 50%;
+		}
+	}
+}
+
+// menu__search ====================================================================================================//
+
+form{
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	transition: width 0.7s;
+	width: 40px;
+	height: 50px;
+	background: white;
+	box-sizing: border-box;
+	border-radius: 25px;
+	border: 4px solid white;
+	padding: 5px;
+	svg{
+		margin-top: 2px;
+	}
+}
+
+input{
+	position: absolute;
+	top: 5px;
+	left: 0;
+	width: 100%;;
+	height: 30px;
+	line-height: 30px;
+	outline: 0;
+	//border: 0;
+	display: none;
+	font-size: 1em;
+	border-radius: 20px;
+	padding: 0 15px;
+	border: 1px solid #000;
+}
+
+form:hover{
+	width: 150px;
+	cursor: pointer;
+	svg{
+		display: none;
+	}
+}
+
+form:hover input{
+	display: block;
+}

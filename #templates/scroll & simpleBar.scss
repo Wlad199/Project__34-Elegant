@@ -1,0 +1,38 @@
+// todo Стандартный Скроллбар  ====================================================================================================//
+
+//https://active-vision.ru/blog/polosa-prokrutki-css/
+/*
+Убрать полосу прокрутки у элемента
+.element::-webkit-scrollbar {
+  width: 0;
+}
+
+Убрать полосу прокрутки для всей страницы
+::-webkit-scrollbar {
+  width: 0;
+}
+
+-webkit-scrollbar состоит различных псевдо-элементов.
+
+::-webkit-scrollbar — это фон самого скроллбара.
+::-webkit-scrollbar-button — кнопки направления на полосе прокрутки.
+::-webkit-scrollbar-track — пустое пространство под индикатором прокрутки.
+::-webkit-scrollbar-thumb — индикатор прокрутки, перетаскиваемый элемент.
+*/
+
+// todo Скроллбар simplebar ====================================================================================================//
+/*
+Образец https://www.youtube.com/watch?v=C_Q6g1lGpDU
+Документация: https://github.com/Grsmto/simplebar/tree/master/packages/simplebar
+
+Для подключения: data-simplebar (аттрибут)
+Скролл всегда виден: data-simplebar-auto-hide="false" (аттрибут)
+Расположен: js/files/scroll/simplebar.js';
+
+.simplebar-track весь скролл
+.simplebar-vertical только вертикальный
+.simplebar-horizontal только горизонтальный
+
+.simplebar-visible оболочка ползунка
+.simplebar-visible::before ползунок
+*/

@@ -1,0 +1,25 @@
+  // Анимация кнопки ====================================================================================================//
+//Подборка анимаций кнопок https://msiter.ru/articles/60-klassnykh-knopok-na-css-s-animaciey
+.button {
+	position: relative;
+	background-color: #007397;
+	span {
+		z-index: 2;// Текст кнопки завернуть в спан и навесить z-index
+	}
+	&::after {
+		content: "";
+		width: 0;
+		height: 100%;
+		left: 50%;
+		top: 0;
+		position: absolute;
+		transition: all 0.3s ease 0s;
+		background-color: #006688;
+	}
+	&:hover {
+		&::after {
+			left: 0;
+			width: 100%;
+		}
+	}
+}
