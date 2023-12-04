@@ -1,4 +1,4 @@
-/*
+
 // Burger (**==MW==**) ====================================================================================================//
 
 // Запрещаем скролл основного контента при открытом бургере
@@ -14,7 +14,7 @@ body._lock {
 	.menu__icon {
 		display: block;
 		position: relative;
-		width: rem(30);
+		width: rem(25);
 		height: rem(18);
 		cursor: pointer;
 		z-index: 5;
@@ -28,7 +28,7 @@ body._lock {
 			position: absolute;
 			width: 100%;
 			height: rem(2); //10%
-			background-color: #fff;
+			background-color: #000;
 		}
 		&::before {
 			top: 0;
@@ -64,7 +64,9 @@ body._lock {
 		left: -100%;
 		width: 100%;
 		height: 100%;
-		background-color: rgba(0, 0, 0, 0.9);
+		//background-color: rgba(0, 0, 0, 0.9);
+		//background-color: #fff;
+		background-color: #E8ECEF;
 		padding: 100px 30px 30px 30px;
 		transition: left 0.3s ease 0s;
 		overflow: auto; // Добавляем скролл
@@ -76,18 +78,18 @@ body._lock {
 			width: 100%;
 			top: 0;
 			left: 0;
-			height: 70px; // Высота шапки
-			background-color: #912105;
+			height: 50px; // Высота шапки
+			background-color: #fff;
 			z-index: 2;
 		}
 	}
 
 	// Выезд меню-бургера при нажатии на бургер
 	.menu__body._active {
-		left: 0;
+		left: -30px;
 	}
 }
-*/
+
 //* header ====================================================================================================//
 
 .header {
@@ -99,11 +101,13 @@ body._lock {
 		justify-content: space-between;
 		//background-color: #b6b6b6;
 		min-height: 80px;
+		@media (max-width: 767px) {
+			min-height: 50px;
+		}
 	}
 }
 .menu {
 	&__icon {
-		display: none;
 	}
 	&__logo {
 		color: #000;
@@ -111,16 +115,77 @@ body._lock {
 		font-size: 24px;
 		font-weight: 500;
 		margin-right: 30px;
+		position: relative;
+		z-index: 3;
 	}
 	&__body {
 	}
 	&__list {
 		display: flex;
-		li:not(:last-child){
-			@include adaptiveValue("margin-right", 30, 25, 1120, 800, 1);
+		@media (min-width: 767px) {
+			li:not(:last-child){
+				@include adaptiveValue("margin-right", 30, 25, 1120, 800, 1);
+			}
+		}
+		li svg{
+			display: none;
+		}
+		@media (max-width: 767px) {
+			display: block;
+			padding-left: 30px;
+			li{
+				svg{
+					display: block;
+					transition: all 0.3s ease 0s;
+				}
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				position: relative;
+				&::after{
+					content: '';
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: 100%;
+					height: 1px;
+					//background-color: #E8ECEF;
+					background-color: #6C7275;
+				}
+			}
 		}
 	}
 	&__manage {
+	}
+	&__box{
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+}
+.menu__item{
+	cursor: pointer;
+	svg path{
+		transition: all 0.3s ease 0s;
+	}
+	&:hover{
+		.menu-link{
+			color: #38CB89;
+		}
+		svg path{
+			stroke: #38CB89;
+		}
+	}
+}
+.menu__item._active{
+	svg{
+		transform: rotate(-180deg);
+	}
+	svg path{
+		stroke: #38CB89;
+	}
+	.menu-link{
+		color: #38CB89;
 	}
 }
 .menu-link {
@@ -136,14 +201,25 @@ body._lock {
 	&:hover{
 		color: #38CB89;
 	}
+	@media (max-width: 767px) {
+		color: #000;
+		font-size: 24px;
+		margin-bottom: 10px;
+		margin-top: 10px;
+	}
 }
 
 .manage-menu {
+	position: relative;
+	z-index: 2;
 	display: flex;
 	gap: 16px;
 	align-items: center;
 	&__search {
 		height: 30px;
+		@media (max-width: 767px) {
+			display: none;
+		}
 	}
 	&__profile {
 	}
@@ -168,50 +244,87 @@ body._lock {
 	}
 }
 
+// menu__form ====================================================================================================//
+
+.menu__form{
+	display: none;
+	@media (max-width: 767px) {
+		display: flex;
+		gap: 10px;
+		align-items: center;
+		background-color: #fff;
+		border-radius: 6px;
+		height: 46px;
+		margin-bottom: 20px;
+		&._form-focus{
+		outline: 1px solid #000;
+			.menu__search{
+				outline: none;
+			}
+		}
+	}
+	.form__button{
+		padding-left: 15px;
+	}
+	.menu__search{
+		height: 100%;
+		width: 100%;
+		margin: 0 10px;
+		font-size: 16px;
+		font-family: inter;
+	}
+}
+
 // menu__search ====================================================================================================//
 
-form{
-	position: relative;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%,-50%);
-	transition: width 0.7s;
-	width: 40px;
-	height: 50px;
-	background: white;
-	box-sizing: border-box;
-	border-radius: 25px;
-	border: 4px solid white;
-	padding: 5px;
-	svg{
-		margin-top: 2px;
+@media (min-width: 767px) {
+
+	.manage-menu{
+
+		form{
+			position: relative;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			transition: width 0.7s;
+			width: 40px;
+			height: 50px;
+			background: white;
+			box-sizing: border-box;
+			border-radius: 25px;
+			border: 4px solid white;
+			padding: 5px;
+			svg{
+				margin-top: 2px;
+			}
+		}
+		
+		input{
+			position: absolute;
+			top: 5px;
+			left: 0;
+			width: 100%;;
+			height: 30px;
+			line-height: 30px;
+			outline: 0;
+			//border: 0;
+			display: none;
+			font-size: 1em;
+			border-radius: 20px;
+			padding: 0 15px;
+			border: 1px solid #000;
+		}
+		
+		form:hover{
+			width: 150px;
+			cursor: pointer;
+			svg{
+				display: none;
+			}
+		}
+		
+		form:hover input{
+			display: block;
+		}
 	}
-}
-
-input{
-	position: absolute;
-	top: 5px;
-	left: 0;
-	width: 100%;;
-	height: 30px;
-	line-height: 30px;
-	outline: 0;
-	//border: 0;
-	display: none;
-	font-size: 1em;
-	border-radius: 20px;
-	padding: 0 15px;
-	border: 1px solid #000;
-}
-
-form:hover{
-	width: 150px;
-	cursor: pointer;
-	svg{
-		display: none;
-	}
-}
-
-form:hover input{
-	display: block;
 }

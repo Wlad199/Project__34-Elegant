@@ -19,7 +19,7 @@ import * as flsFunctions from "./files/functions.js";
 //* Хеадер, Навигация Адаптив ===========================================================================//
 
 /* MW Модуль для работы с меню (Бургер) */
-//flsFunctions.MenuBurg();
+flsFunctions.MenuBurg();
 //===================//
 
 /* MW (3.106) Добавление класса touch для HTML если браузер мобильный */
@@ -65,7 +65,7 @@ import * as flsFunctions from "./files/functions.js";
 //* Работа с формами ======================================================================================//
 
 /* Работа с полями формы */
-// flsForms.formFieldsInit({ viewPass: false });
+flsForms.formFieldsInit({ viewPass: false });
 
 /* Oтправка формы */
 // flsForms.formSubmit();

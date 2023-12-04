@@ -1,20 +1,40 @@
 <header class="header">
 	<div class="header__container">
 		<div class="header__menu menu">
-			<div class="menu__icon">
-				<span></span>
+			<div class="menu__box">
+				<div class="menu__icon">
+					<span></span>
+				</div>
+				<a href="#" class="menu__logo">3legant.</a>
 			</div>
-			<a href="#" class="menu__logo">3legant.</a>
 			<nav class="menu__body">
 				<ul class="menu__list">
+					<form class="menu__form" action="#">
+						<button type="submit" class="form__button">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+								<path d="M18.5 18.5L22 22M21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21C16.7467 21 21 16.7467 21 11.5Z" stroke="#141718" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+						</button>
+						<input class="menu__search" type="text" name="search" autocomplete="off" placeholder="Search">
+					</form>
 					<li><a href="#" class="menu-link _active">Home</a></li>
-					<li><a href="#" class="menu-link">Shop</a></li>
-					<li><a href="#" class="menu-link">Product</a></li>
+					<li class="menu__item">
+						<a href="#" class="menu-link">Shop</a>
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+							<path d="M6.27246 9L12.2725 15L18.2725 9" stroke="#141718" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+					</li>
+					<li class="menu__item">
+						<a href="#" class="menu-link">Product</a>
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+							<path d="M6.27246 9L12.2725 15L18.2725 9" stroke="#141718" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+					</li>
 					<li><a href="#" class="menu-link">Contact Us</a></li>
 				</ul>
 			</nav>
 			<div class="menu__manage manage-menu">
-				<div class="manage-menu__search">
+				<div class="manage-menu__search" tabindex="0">
 					<form action="#">
 						<input type="search">
 						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">

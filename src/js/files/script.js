@@ -8,3 +8,22 @@ import { flsModules } from "./modules.js";
 //$(document).ready(function () {
 //	$('.comment__body').slick();
 //})
+
+
+// Запретить всплытие формы ====================================================================================================//
+
+let menuSearch = document.querySelector('.menu__search')
+menuSearch.addEventListener('click', function (e) {
+	e.stopPropagation()
+})
+
+// Клики по меню ====================================================================================================//
+
+let itemMenu = document.querySelectorAll('.menu__item')
+
+itemMenu.forEach(function (item) {
+	item.addEventListener('click', function (e) {
+		item.classList.toggle('_active')
+		e.stopPropagation()
+	})
+})
