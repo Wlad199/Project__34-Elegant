@@ -95,6 +95,7 @@ body._lock {
 	position: fixed;
 	width: 100%;
 	background-color: #fff;
+	z-index: 50;
 	&__container {
 	}
 	&__menu {
@@ -103,12 +104,15 @@ body._lock {
 		justify-content: space-between;
 		//background-color: #b6b6b6;
 		min-height: 80px;
+		transition: all 0.3s ease 0s;
 		@media (max-width: 767px) {
 			min-height: 50px;
 		}
 	}
 }
-
+.header._header-scroll .header__menu{
+	min-height: 50px;
+}
 
 .header._active .menu__manage{
 	opacity: 0;
@@ -195,16 +199,18 @@ body._lock {
 	}
 }
 .menu__item._active{
-	svg{
-		transform: rotate(-180deg);
+	@media (max-width: 767px) {
+		svg{
+			transform: rotate(-180deg);
+		}
+		svg path{
+			stroke: #38CB89;
+		}
+		.menu-link{
+			color: #38CB89;
+		}
 	}
-	svg path{
-		stroke: #38CB89;
 	}
-	.menu-link{
-		color: #38CB89;
-	}
-}
 .menu-link {
 	font-family: $grot;
 	color: #6C7275;

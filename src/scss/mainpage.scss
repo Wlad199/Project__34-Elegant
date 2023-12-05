@@ -1,0 +1,28 @@
+.page{
+	margin-top: 80px;
+	@media (max-width: 767px) {
+		margin-top: 50px;
+	}
+}
+.header._header-scroll .page{
+	//margin-top: 50px;
+}
+
+//* main-screen ====================================================================================================//
+
+.main-screen {
+		&__container {
+		}
+		&__body {
+			@media (max-width: 767px) {
+				margin: 0 -15px;
+			}
+		}
+		&__item-ibg {
+			display: block;
+			padding-bottom: 46%;
+			@media (max-width: 767px) {
+				padding-bottom: 102%;
+			}
+		}
+}

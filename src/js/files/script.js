@@ -5,9 +5,22 @@ import { flsModules } from "./modules.js";
 
 
 // Функционал слайдера-слик (MW 3.2)
-//$(document).ready(function () {
-//	$('.comment__body').slick();
-//})
+$(document).ready(function () {
+	$('.main-screen__body').slick({
+		//autoplay: true, // автовоспроизведение (false)
+		autoplaySpeed: 2000, // скорость (3000)
+		pauseOnFocus: true, // остановка при фокусе
+		touchThreshold: 10, // расстояние для считывания свайпа (5 1/5 экрана)
+		responsive: [
+			{
+				breakpoint: 768,
+				settings: {
+					dots: true, // точки
+				}
+			}
+		],
+	});
+})
 
 
 // Запретить всплытие формы ====================================================================================================//

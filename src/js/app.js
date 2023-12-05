@@ -13,7 +13,7 @@ import * as flsFunctions from "./files/functions.js";
 //* JQuery===============================================================================================//
 
 /* MW Подключение JQ */
-//import '../js/files/my-js/jq.js'
+import '../js/files/my-js/jq.js'
 //===================//
 
 //* Хеадер, Навигация Адаптив ===========================================================================//
@@ -27,7 +27,7 @@ flsFunctions.MenuBurg();
 //===================//
 
 // Функционал добавления классов к хедеру при прокрутке
-// flsScroll.headerScroll();
+flsScroll.headerScroll();
 //===================//
 
 // Плавная навигация по странице
@@ -54,7 +54,7 @@ flsFunctions.spollers();
 
 /* MW Подключение  Slick Slider + JQ*/
 //import "./files/my-js/slickSlider.js";
-//import '../js/files/my-js/slick.min.js'
+import '../js/files/my-js/slick.min.js'
 //===================//
 
 //Попапы. Сниппет (HTML): pl
