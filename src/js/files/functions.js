@@ -8,13 +8,16 @@ import { flsModules } from "./modules.js";
 export function MenuBurg() {
 	const iconMenu = document.querySelector('.menu__icon'); // Получаем объект
 	const menuBody = document.querySelector('.menu__body'); // Получаем объект
+	const menuHeader = document.querySelector('.header'); // Получаем объект
 	if (iconMenu) {
 		iconMenu.addEventListener("click", function (e) {  // Создаем событие "click"
 			document.body.classList.toggle('_lock');  // Запрещаем скроллить контент при открытом меню для всего body
 			iconMenu.classList.toggle('_active');  // Добавляем класс '_active'
 			menuBody.classList.toggle('_active');  // Добавляем класс '_active'
+			menuHeader.classList.toggle('_active');  // Добавляем класс '_active'
 			menuBody.addEventListener('click', function () {
 				iconMenu.classList.remove('_active');  //  Закрываем меню
+				menuHeader.classList.remove('_active');  // 
 				menuBody.classList.remove('_active');  //  Снимаем блок
 				document.body.classList.remove('_lock');  //  Снимаем блок для всего body
 			})

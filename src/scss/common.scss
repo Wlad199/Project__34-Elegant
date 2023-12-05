@@ -1,1 +1,18 @@
 // Заголовки, общие БЄМ блоки и проче...
+
+//* button ====================================================================================================//
+
+.button {
+	background-color: #1d2223;
+	color: #fff;
+	padding: 10px 25px;
+	border-radius: 6px;
+	width: 100%;
+	transition: all 0.3s ease 0s;
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 177%;
+	&:hover{
+		background-color: #000;
+	}
+}

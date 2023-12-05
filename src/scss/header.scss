@@ -64,10 +64,8 @@ body._lock {
 		left: -100%;
 		width: 100%;
 		height: 100%;
-		//background-color: rgba(0, 0, 0, 0.9);
-		//background-color: #fff;
 		background-color: #E8ECEF;
-		padding: 100px 30px 30px 30px;
+		padding: 80px 30px 30px 30px;
 		transition: left 0.3s ease 0s;
 		overflow: auto; // Добавляем скролл
 
@@ -79,7 +77,8 @@ body._lock {
 			top: 0;
 			left: 0;
 			height: 50px; // Высота шапки
-			background-color: #fff;
+			//background-color: #fff;
+			backdrop-filter: blur(5px);
 			z-index: 2;
 		}
 	}
@@ -93,6 +92,9 @@ body._lock {
 //* header ====================================================================================================//
 
 .header {
+	position: fixed;
+	width: 100%;
+	background-color: #fff;
 	&__container {
 	}
 	&__menu {
@@ -106,6 +108,13 @@ body._lock {
 		}
 	}
 }
+
+
+.header._active .menu__manage{
+	opacity: 0;
+	visibility: hidden;
+}
+
 .menu {
 	&__icon {
 	}
@@ -119,6 +128,12 @@ body._lock {
 		z-index: 3;
 	}
 	&__body {
+		@media (max-width: 767px) {
+			display: flex;
+			flex-direction: column;
+			//height: calc(100vh - 50px);
+			height: 100dvh;
+		}
 	}
 	&__list {
 		display: flex;
@@ -131,6 +146,7 @@ body._lock {
 			display: none;
 		}
 		@media (max-width: 767px) {
+			flex: 1 1 auto;
 			display: block;
 			padding-left: 30px;
 			li{
@@ -156,6 +172,7 @@ body._lock {
 		}
 	}
 	&__manage {
+		transition: all 0.2s ease 0s;
 	}
 	&__box{
 		display: flex;
@@ -244,6 +261,72 @@ body._lock {
 	}
 }
 
+// options-menu ====================================================================================================//
+
+.menu {
+	&__options {
+		display: none;
+		@media (max-width: 767px) {
+			display: block;
+			padding-left: 30px;
+			margin-top: 40px;
+		}
+	}
+}
+.options-menu {
+	&__item {
+		display: flex;
+		justify-content: space-between;
+		font-family: Inter;
+		font-size: 22px;
+		cursor: pointer;
+		padding-top: 12px;
+		padding-bottom: 7px;
+		position: relative;
+		color: #6C7275;
+		font-weight: 500;
+		&::after{
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 1px;
+			background-color: #6C7275;
+		}
+		p:nth-child(2) {
+			position: relative;
+			margin-right: 25px;
+			//padding-right: 10px;
+			&::after{
+				content: "2";
+				text-align: center;
+				font-size: 11px;
+				font-family: inter;
+				padding-top: 4px;
+				padding-right: 1px;
+				position: absolute;
+				top: 2px;
+				right: -22px;
+				height: 20px;
+				width: 20px;
+				background-color: #000;
+				color: #fff;
+				border-radius: 50%;
+			}
+		}
+	}
+	&__button {
+		margin-top: 27px;
+		margin-bottom: 20px;
+	}
+	&__social {
+		display: flex;
+		gap: 24px;
+	}
+}
+
+
 // menu__form ====================================================================================================//
 
 .menu__form{
@@ -307,7 +390,7 @@ body._lock {
 			height: 30px;
 			line-height: 30px;
 			outline: 0;
-			//border: 0;
+			font-family: Inter;
 			display: none;
 			font-size: 1em;
 			border-radius: 20px;

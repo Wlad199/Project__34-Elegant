@@ -49,7 +49,7 @@ flsFunctions.MenuBurg();
 //===================//
 
 /* Модуль работы со спойлерами Документация:Сниппет (HTML): spollers */
-// flsFunctions.spollers();
+flsFunctions.spollers();
 //===================//
 
 /* MW Подключение  Slick Slider + JQ*/
