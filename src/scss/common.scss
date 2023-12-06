@@ -1,13 +1,20 @@
 // Заголовки, общие БЄМ блоки и проче...
 
+//* title ====================================================================================================//
+
+.title {
+	font-family: $pop;
+	@include adaptiveValue("font-size", 40, 32);
+	font-weight: 500;
+	line-height: 110%;
+}
+
 //* button ====================================================================================================//
 
 .button {
 	background-color: #1d2223;
 	color: #fff;
-	padding: 10px 25px;
 	border-radius: 6px;
-	width: 100%;
 	transition: all 0.3s ease 0s;
 	font-size: 18px;
 	font-weight: 500;
@@ -17,78 +24,130 @@
 	}
 }
 
-//  ====================================================================================================//
+//* link-arrow ====================================================================================================//
 
-///* Ограничивающая оболочка */
-.slick-list {
-	overflow: hidden;	//!!! Скрыть лишние слайды
-}
-///* Лента слайдов */
-.slick-track{
-	display: flex;	//!!! Выстроить в ряд
-}
-
-.main-screen__container{
-	position: relative;
-}
-
-/* Стрелки*/
-.slick-arrow{
-	position: absolute;
-	top: 50%;
-	z-index: 10;
-	font-size: 0;
-	height: 55px;
-	width: 55px;
-	opacity: 0.6;
-	transition: all 0.5s ease 0s;
+.link-arrow{
+	display: inline-flex;
+	gap: 4px;
+	cursor: pointer;
+	svg{
+		transition: all 0.3s ease 0.2s;
+	}
+	p{
+		position: relative;
+		&::after{
+			position: absolute;
+			content: '';
+			bottom: -2px;
+			left: 0;
+			height: 1px;
+			width: 0;
+			background-color: #000;
+			transition: all 0.3s ease 0s;
+		}
+	}
 	&:hover{
-		opacity: 1;
-	}
-	@media (max-width: 767px) {
-		width: 0;
-		height: 0;
-	}
-}
-/* Стрелка влево */
-.slick-arrow.slick-prev{
-	@media (min-width: 767px) {
-		left: 50px;
-		background: url('@img/main-screen/icons/arrow-left.svg') -16px -7px no-repeat;
+		p:after{
+			width: 100%;
+		}
+		svg{
+			transform: translateX(10px);
+		}
 	}
 }
-/* Стрелка вправо */
-.slick-arrow.slick-next{
-	@media (min-width: 767px) {
-		right: 50px;
-		background: url('@img/main-screen/icons/arrow-right.svg') -16px -7px no-repeat;
+
+//* Slider ====================================================================================================//
+.main-screen{
+
+	///* Ограничивающая оболочка */
+	.slick-list {
+		overflow: hidden;	//!!! Скрыть лишние слайды
 	}
-}
-/*точки */
-	.slick-dots{
-		display: flex;
-		align-items: center;
-		justify-content: center;
+	///* Лента слайдов */
+	.slick-track{
+		display: flex;	//!!! Выстроить в ряд
+	}
+	
+	.main-screen__container{
+		position: relative;
+	}
+	
+	/* Стрелки*/
+	.slick-arrow{
 		position: absolute;
-		bottom: 25px;
-		left: 50%;
-		transform: translateX(-50%);
-	}
-	.slick-dots li{
-		margin: 0px 10px;
-		list-style: none;
-	}
-	.slick-dots li button{
+		top: 50%;
+		z-index: 10;
 		font-size: 0;
-		height: 10px;
-		width: 10px;
-		border-radius: 50%;
-		background-color: #fff;
-		border: 1px solid #fff;
-		transition: all 0.3s ease 0s;
+		height: 55px;
+		width: 55px;
+		opacity: 0.6;
+		transition: all 0.5s ease 0s;
+		&:hover{
+			opacity: 1;
+		}
+		@media (max-width: 767px) {
+			width: 0;
+			height: 0;
+		}
 	}
-	/* Активная точка */
-	.slick-dots li.slick-active button{
-		width: 30px;
-		border-radius: 5px;
+	/* Стрелка влево */
+	.slick-arrow.slick-prev{
+		@media (min-width: 767px) {
+			left: 50px;
+			background: url('@img/main-screen/icons/arrow-left.svg') -16px -7px no-repeat;
+		}
+	}
+	/* Стрелка вправо */
+	.slick-arrow.slick-next{
+		@media (min-width: 767px) {
+			right: 50px;
+			background: url('@img/main-screen/icons/arrow-right.svg') -16px -7px no-repeat;
+		}
+	}
+	/*точки */
+		.slick-dots{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: absolute;
+			bottom: 25px;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		.slick-dots li{
+			margin: 0px 10px;
+			list-style: none;
+		}
+		.slick-dots li button{
+			font-size: 0;
+			height: 10px;
+			width: 10px;
+			border-radius: 50%;
+			background-color: #fff;
+			border: 1px solid #fff;
+			transition: all 0.3s ease 0s;
+		}
+		/* Активная точка */
+		.slick-dots li.slick-active button{
+			width: 30px;
+			border-radius: 5px;
+		}
+}
+	
+	// arrivals ====================================================================================================//
+	
+	.arrivals{
+		.slick-track{
+			//display: flex;
+		}
+		
+	///* Ограничивающая оболочка */
+	.slick-list {
+		overflow: hidden;	//!!! Скрыть лишние слайды
+	}
+	///* Лента слайдов */
+	.slick-track{
+		display: flex;	//!!! Выстроить в ряд
+	}
+	
 	}

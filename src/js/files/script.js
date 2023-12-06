@@ -40,3 +40,13 @@ itemMenu.forEach(function (item) {
 		e.stopPropagation()
 	})
 })
+
+
+// Like ====================================================================================================//
+
+let like = document.querySelectorAll('.card-arrivals__like')
+like.forEach(function (i) {
+	i.addEventListener('click', function (e) {
+		i.classList.toggle('_active')
+	})
+})
