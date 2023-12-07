@@ -313,3 +313,123 @@
 		}
 	}
 }
+
+//* advantages ====================================================================================================//
+
+.advantages {
+	@include adaptiveValue("padding-bottom", 50, 35);
+	&__container {
+	}
+	&__body {
+		display: flex;
+		gap: 24px;
+		@media (max-width: 992px) {
+			gap: 15px;
+		}
+		@media (max-width: 767px) {
+			flex-wrap: wrap;
+		}
+		@media (max-width: 400px) {
+			gap: 10px;
+		}
+	}
+	&__item {
+		flex: 0 1 25%;
+		background-color: #F3F5F7;
+		padding: 48px 32px;
+		@media (max-width: 992px) {
+			padding: 35px 20px;
+		}
+		@media (max-width: 767px) {
+			flex: 0 1 calc(50% - 7.5px);
+		}
+		@media (max-width: 400px) {
+			//flex: 0 1 100%;
+			padding: 20px 10px;
+		}
+	}
+}
+.item-advantages {
+	&__icon {
+		max-width: 48px;
+		padding-bottom: 16px;
+	}
+	&__label {
+		font-family: $pop;
+		@include adaptiveValue("font-size", 20, 16);
+		font-weight: 600;
+		line-height: 157%;
+		padding-bottom: 8px;
+	}
+	&__text {
+		font-family: $pop;
+		color: #6c7275;
+		line-height: 140%;
+	}
+}
+
+//* offer ====================================================================================================//
+
+.offer {
+	overflow: hidden;
+	@include adaptiveValue("margin-bottom", 90, 40);
+	@media (min-width: 767px) {
+		display: flex;
+		background-color: #F3F5F7;
+	}
+	&__container {
+		display: flex;
+		align-items: center;
+	}
+	&__content {
+		margin: 0 auto;
+		padding: 140px 0px;
+		max-width: 480px;
+		@media (max-width: 767px) {
+			background-color: #F3F5F7;
+			padding-top: 55px;
+			@include adaptiveValue("padding-top", 55, 30, 767, 350, 1);
+			@include adaptiveValue("padding-bottom", 60, 40, 767, 350, 1);
+		}
+	}
+	&__body {
+	}
+	&__subtitle {
+		color: #377DFF;
+		font-weight: 700;
+		text-transform: uppercase;
+		padding-bottom: 16px;
+	}
+	&__title {
+		font-family: $pop;
+		@include adaptiveValue("font-size", 40, 32);
+		font-weight: 500;
+		line-height: 110%;
+		width: 100%;
+		max-width: 356px;
+		padding-bottom: 16px;
+	}
+	&__text {
+		@include adaptiveValue("font-size", 20, 16);
+		line-height: 160%;
+		padding-bottom: 24px;
+	}
+	&__link {
+	}
+	&__image {
+		flex: 0 0 50%;
+		position: relative;
+		img {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			object-fit: cover;
+		}
+		@media (max-width: 767px) {
+			//padding-bottom: calc(375 / 367 * 100%);
+			padding-bottom: 98%;
+		}
+	}
+}
