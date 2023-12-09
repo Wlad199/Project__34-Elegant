@@ -50,3 +50,29 @@ like.forEach(function (i) {
 		i.classList.toggle('_active')
 	})
 })
+
+
+// view ====================================================================================================//
+
+let viewButton = document.querySelectorAll('.item-filter__button')
+let viewList = document.querySelectorAll('.item-filter__list')
+
+viewButton.forEach(function (i) {
+	i.addEventListener('click', function () {
+		this.classList.toggle('_open');
+		this.closest('.item-filter__select').classList.toggle('_open');
+		this.nextElementSibling.classList.toggle('_open');
+		let itemFilter = this.nextElementSibling.querySelectorAll('li')
+		itemFilter.forEach(function (i) {
+			i.addEventListener('click', function () {
+				itemFilter.forEach(function (i) {
+					i.classList.remove('_active')
+				})
+				i.classList.toggle('_active')
+				viewList.forEach(function (i) {
+					i.classList.remove('_open')
+				})
+			})
+		})
+	})
+})

@@ -1,5 +1,76 @@
 // Заголовки, общие БЄМ блоки и проче...
 
+// crumb ====================================================================================================//
+.crumb{
+	display: none;
+}
+
+@media (min-width: 767px) {
+	.crumb {
+		display: block;
+		position: fixed;
+		top: 80px;
+		left: 0;
+		z-index: 5;
+		width: 100%;
+		padding-top: 16px;
+		transition: all 0.3s ease 0s;
+		&__container {
+		}
+		&__body {
+			display: flex;
+			//gap: 32px;
+			font-size: 14px;
+			font-weight: 500;
+			line-height: 170%;
+			a{
+				color: #605f5f;
+				position: relative;
+				padding-right: 16px;
+				margin-right: 16px;
+				transition: all 0.3s ease 0s;
+				&:hover{
+					color: #38CB89;
+					&::after, &::before{
+						background-color: #38CB89;
+						right: -3px;
+					}
+				}
+				&::after{
+					content: '';
+					position: absolute;
+					top: 9px;
+					right: 0;
+					width: 7px;
+					height: 1px;
+					background-color: #605f5f;
+					transform: rotate(45deg);
+					transition: all 0.3s ease 0s;
+				}
+				&::before{
+					content: '';
+					position: absolute;
+					top: 14px;
+					right: 0;
+					width: 7px;
+					height: 1px;
+					background-color: #605f5f;
+					transform: rotate(-45deg);
+					transition: all 0.3s ease 0s;
+				}
+			}
+			p{
+				color: #121212;
+				
+			}
+		}
+	}
+	.crumb._crumb-scroll{
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+
 //* title ====================================================================================================//
 
 .title {
