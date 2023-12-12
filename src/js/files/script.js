@@ -53,26 +53,65 @@ like.forEach(function (i) {
 
 
 // view ====================================================================================================//
-
+/*
 let viewButton = document.querySelectorAll('.item-filter__button')
 let viewList = document.querySelectorAll('.item-filter__list')
 
 viewButton.forEach(function (i) {
+
 	i.addEventListener('click', function () {
 		this.classList.toggle('_open');
-		this.closest('.item-filter__select').classList.toggle('_open');
 		this.nextElementSibling.classList.toggle('_open');
 		let itemFilter = this.nextElementSibling.querySelectorAll('li')
+
+		// Прослушка на каждую LI
 		itemFilter.forEach(function (i) {
 			i.addEventListener('click', function () {
+
 				itemFilter.forEach(function (i) {
 					i.classList.remove('_active')
 				})
 				i.classList.toggle('_active')
+
 				viewList.forEach(function (i) {
-					i.classList.remove('_open')
+					i.classList.remove('_open');
+					viewButton.forEach(function (i) {
+						i.classList.remove('_open')
+					})
 				})
+
+				console.log(this)
 			})
+			//let contentFilter = this.textContent;
 		})
+
+		//this.prepend(contentFilter)
+		//console.log(this)
+		//let currentButton = this.textContent
+		//currentButton.prepend(contentFilter)
 	})
 })
+*/
+
+// filter-store__view ====================================================================================================//
+
+let viewItem = document.querySelectorAll('.view__item')
+
+viewItem.forEach(function (i) {
+	i.addEventListener('click', function () {
+		viewItem.forEach(function (i) {
+			i.classList.remove('_active')
+		})
+		i.classList.add('_active')
+	})
+})
+
+// Mark header ====================================================================================================//
+/*
+let menuList = document.querySelector('.menu__list')
+let itemHeaderMenu = menuList.querySelectorAll('li')
+itemHeaderMenu.forEach(function (i) {
+	i.classList.remove('_active')
+})
+itemHeaderMenu[1].classList.add('_active')
+*/

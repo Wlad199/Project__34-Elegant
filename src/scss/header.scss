@@ -219,7 +219,7 @@ body._lock {
 	line-height: 170%;
 	transition: all 0.3s ease 0s;
 	&._active{
-		color: #000;
+		//color: #000;
 	}
 	&:hover{
 		color: #38CB89;
@@ -417,5 +417,13 @@ body._lock {
 		form:hover input{
 			display: block;
 		}
+	}
+}
+
+//  =================//
+
+.menu__list{
+	li._active a{
+		color: #000;
 	}
 }
