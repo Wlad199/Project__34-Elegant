@@ -115,3 +115,35 @@ itemHeaderMenu.forEach(function (i) {
 })
 itemHeaderMenu[1].classList.add('_active')
 */
+
+// show pass ====================================================================================================//
+/*
+let viewPass = document.querySelector('.pass-view')
+let passInput = document.querySelector('#pass-input')
+
+viewPass.addEventListener('click', function (e) {
+	if (passInput.getAttribute('type') === 'password') {
+		viewPass.classList.add('_view')
+		passInput.setAttribute('type', 'text')
+	} else {
+		viewPass.classList.remove('_view')
+		passInput.setAttribute('type', 'password')
+	}
+})
+*/
+
+let viewPass = document.querySelectorAll('.pass-view')
+//let passInput = document.querySelector('#pass-input')
+
+viewPass.forEach(function (i) {
+	i.addEventListener('click', function (e) {
+		let passInput = this.closest('.sign-up__pass').querySelector('.sign-up__input')
+		if (passInput.getAttribute('type') === 'password') {
+			passInput.nextElementSibling.classList.add('_view')
+			passInput.setAttribute('type', 'text')
+		} else {
+			passInput.nextElementSibling.classList.remove('_view')
+			passInput.setAttribute('type', 'password')
+		}
+	})
+})

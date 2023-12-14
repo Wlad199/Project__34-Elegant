@@ -1,0 +1,194 @@
+.popup {
+	//overflow: auto;
+	&__wrapper {
+	}
+	&__content {
+		background-color: #fff;
+		padding: 0;
+		border-radius: 0;
+		width: 100%;
+		max-width: 1100px;
+		position: relative;
+	}
+	&__close {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		z-index: 2;
+	}
+}
+
+//* sign-up ====================================================================================================//
+
+.sign-up {
+	&__body {
+		display: flex;
+		@media (max-width: 767px) {
+			flex-wrap: wrap;
+		}
+	}
+	
+	// image =================//
+	
+	&__image {
+		flex: 0 1 50%;
+		@media (max-width: 767px) {
+			flex: 0 1 100%;
+			padding-bottom: 115%;
+		}
+	}
+	&__label {
+		position: relative;
+		z-index: 1;
+		text-align: center;
+		padding-top: 30px;
+		font-family: $pop;
+		font-size: 24px;
+		font-weight: 500;
+	}
+	&__image-box {
+	}
+	
+	// content =================//
+	
+	&__content {
+		flex: 0 1 50%;
+		@media (max-width: 767px) {
+			flex: 0 1 100%;
+		}
+	}
+	&__box {
+		display: flex;
+		flex-direction: column;
+		max-width: 450px;
+		margin: 0 auto;
+		padding-top: 50px;
+		@include adaptiveValue("padding-top", 80, 30);
+		@include adaptiveValue("padding-bottom", 80, 50);
+		padding-right: 10px;
+		padding-left: 10px;
+	}
+	&__title {
+		font-family: $pop;
+		@include adaptiveValue("font-size", 40, 28);
+		font-weight: 500;
+		padding-bottom: 25px;
+	}
+	&__text {
+		color: #6c7275;
+		line-height: 160%;
+		padding-bottom: 32px;
+		a{
+			color: #38CB89;
+			font-weight: 600;
+		}
+	}
+	&__form {
+		position: relative;
+	}
+	&__input {
+		width: 100%;
+		outline: none;
+		height: 26px;
+		padding: 0px 10px;
+		margin-bottom: 32px;
+		border-bottom: 1px solid #E8ECEF;
+		font-size: 16px;
+	}
+	&__button {
+		width: 100%;
+		padding: 10px 40px;
+	}
+}
+
+//.sign-up__pass{
+//}
+
+//.sign-up__pass{
+//		position: relative;
+//		display: block;
+//		&::before{
+//			content: '';
+//			cursor: pointer;
+//			position: absolute;
+//			top: 5px;
+//			right: 0;
+//			//z-index: 10;
+//			height: 20px;
+//			width: 20px;
+//			background: url('@img/singUp/icons/eye.svg') 0 0px no-repeat;
+//		}
+//		input{
+//			padding-right: 25px;
+//		}
+//}
+
+.sign-up__pass{
+	position: relative;
+	input{
+		padding-right: 25px;
+	}
+	.pass-view{
+		position: absolute;
+		top: 5px;
+		right: 0;
+		width: 20px;
+		height: 20px;
+		background: url('@img/singUp/icons/eye.svg') 0 0px no-repeat;
+		cursor: pointer;
+	}
+	.pass-view._view{
+		background: url('@img/singUp/icons/eye-slash.svg') 0 0px no-repeat;
+	}
+}
+
+.checkbox {
+	padding-bottom: 32px;
+	&__input {
+		display: none;
+	}
+	&__label {
+		cursor: pointer;
+		user-select: none;
+		color: #6c7275;
+		padding-left: 40px;
+		display: block;
+		line-height: 130%;
+		position: relative;
+		&::before{
+			content: '';
+			position: absolute;
+			top: -1px;
+			left: 0;
+			width: 24px;
+			height: 24px;
+			border: 1px solid #000;
+		}
+		&::after{
+			content: '';
+			position: absolute;
+			top: -1px;
+			left: 0;
+			width: 24px;
+			height: 24px;
+			background-color: #000;
+			transition: all 0.3s ease 0s;
+			transform: scale(0);
+		}
+		@media (max-width: 415px) {
+			&::before, &::after{
+				top: 6px;
+			}
+		}
+		a{
+			color: #000;
+			transition: all 0.3s ease 0s;
+			&:hover{
+				color: #38CB89;
+			}
+		}
+	}
+}
+.checkbox__input:checked + .checkbox__label::after{
+	transform: scale(1);
+}

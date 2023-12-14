@@ -9,3 +9,80 @@
 	</div>
 </div>-->
 
+<!-- signUp -->
+<div id="signUp" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close">
+				<svg xmlns="http://www.w3.org/2000/svg" height="16" width="12" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
+			</button>
+			<div class="sign-up__body">
+				<div class="sign-up__image sign-up__image-ibg">
+					<div class="sign-up__label">3legant.</div>
+					<div data-change class="sign-up__image-box">
+						<img src="@img/singUp/01.jpg" alt="image">
+						<img src="@img/singUp/0111.jpg" alt="image">
+					</div>
+				</div>
+				<div class="sign-up__content">
+					<div class="sign-up__box">
+						<div class="sign-up__title">Sign up</div>
+						<div class="sign-up__text">Already have an account? <a href="#" data-popup="#signIn">Sign in</a></div>
+						<form class="sign-up__form">
+							<input type="text" name="name" autocomplete="off" class="sign-up__input" placeholder="Your name">
+							<input type="text" name="name" autocomplete="off" class="sign-up__input" placeholder="Username">
+							<input type="text" name="email" autocomplete="off" class="sign-up__input" placeholder="Email address" data-validate data-required="email" data-error="Введен не верный E-mail">
+							<div class="sign-up__pass">
+								<input type="password" name="Password" autocomplete="off" class="sign-up__input" placeholder="Password">
+								<div class="pass-view"></div>
+							</div>
+							<div class="checkbox">
+								<input id="signUp-checkbox" type="checkbox" name="agreemant" class="checkbox__input">
+								<label for="signUp-checkbox" class="checkbox__label">I agree with <a href="#">Privacy Policy</a> and <a href="#">Terms of Use</a></label>
+							</div>
+							<button type="submit" class="sign-up__button button">Sign Up</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- signIn -->
+<div id="signIn" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close">
+				<svg xmlns="http://www.w3.org/2000/svg" height="16" width="12" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
+			</button>
+			<div class="sign-up__body">
+				<div class="sign-up__image sign-up__image-ibg">
+					<div class="sign-up__label">3legant.</div>
+					<div data-change class="sign-up__image-box">
+						<img src="@img/singUp/01.jpg" alt="image">
+						<img src="@img/singUp/0111.jpg" alt="image">
+					</div>
+				</div>
+				<div class="sign-up__content">
+					<div class="sign-up__box">
+						<div class="sign-up__title">Sign In</div>
+						<div class="sign-up__text">Don’t have an accout yet? <a href="#" data-popup="#signUp">Sign Up</a></div>
+						<form class="sign-up__form">
+							<input type="text" name="name" autocomplete="off" class="sign-up__input" placeholder="Your usernam or email address">
+							<div class="sign-up__pass">
+								<input type="password" name="Password" autocomplete="off" class="sign-up__input" placeholder="Password">
+								<div class="pass-view"></div>
+							</div>
+							<div class="checkbox">
+								<input id="signIn-checkbox" type="checkbox" name="agreemant" class="checkbox__input">
+								<label for="signIn-checkbox" class="checkbox__label">Remember me</label>
+							</div>
+							<button type="submit" class="sign-up__button button">Sign Up</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
