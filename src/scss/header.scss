@@ -245,6 +245,15 @@ body._lock {
 		}
 	}
 	&__profile {
+		svg path{
+			transition: all 0.3s ease 0s;
+			stroke: #000;
+		}
+		&:hover{
+			svg path{
+				stroke: #269563;
+			}
+		}
 	}
 	&__cart {
 		position: relative;
@@ -263,6 +272,15 @@ body._lock {
 			background-color: #000;
 			color: #fff;
 			border-radius: 50%;
+		}
+		svg path{
+			transition: all 0.3s ease 0s;
+			stroke: #000;
+		}
+		&:hover{
+			svg path{
+				stroke: #269563;
+			}
 		}
 	}
 }
@@ -426,4 +444,224 @@ body._lock {
 	li._active a{
 		color: #000;
 	}
+}
+
+//! flyout ====================================================================================================//
+
+.wrapper._active{
+	position: relative;
+	&::after{
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(#000, .7);
+		z-index: 10;
+	}
+}
+
+.flyout {
+	position: absolute;
+	top: 0;
+	right: -150%;
+	background-color: #fff;
+	height: 100vh;
+	transition: all 0.3s ease 0s;
+	max-width: 520px;
+	z-index: 6;
+	overflow: auto;
+	&__body {
+		padding: 40px 24px;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		min-height: 100%;
+		@media (max-width: 500px) {
+			padding: 30px 15px;
+		}
+	}
+	&__head {
+		user-select: none;
+		font-family: $pop;
+		font-size: 28px;
+		font-weight: 500;
+		position: sticky;
+		top: 0;
+		width: 100%;
+		height: 50px;
+		//z-index: 80;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		background-color: #fff;
+	}
+	&__cart {
+		flex: 1 1 auto;
+		@include adaptiveValue("margin-bottom", 30, 15);
+	}
+	&__item {
+		display: flex;
+		padding: 24px 0px;
+		border-bottom: 1px solid #E8ECEF;
+		margin: 0px -15px;
+		align-items: center;
+		margin-bottom: 24px;
+		@media (max-width: 500px) {
+			margin: 0px -10px;
+		}
+	}
+}
+
+.flyout._active{
+	right: 0;
+}
+
+.item-flyout {
+	&__image {
+		padding: 0px 15px;
+		@media (max-width: 500px) {
+			padding: 0px 10px;
+		}
+	}
+	&__content {
+		padding: 0px 15px;
+		flex: 1 1 auto;
+		@media (max-width: 500px) {
+			padding: 0px 10px;
+		}
+	}
+	&__name {
+		@include adaptiveValue("font-size", 18, 16);
+		font-weight: 600;
+		line-height: 157%;
+		@include adaptiveValue("padding-bottom", 10, 8);
+	}
+	&__color {
+		@include adaptiveValue("font-size", 16, 14);
+		line-height: 166%;
+		@include adaptiveValue("padding-bottom", 10, 8);
+	}
+	&__counter {
+	}
+	&__price {
+		display: flex;
+		flex-direction: column;
+		padding: 0px 15px;
+		align-self: start;
+		padding-top: 5px;
+		color: #000;
+		@include adaptiveValue("font-size", 18, 16);
+		@media (max-width: 500px) {
+			padding: 0px 10px;
+		}
+	}
+}
+.counter {
+	user-select: none;
+	width: 80px; 
+	height: 32px;
+	border-radius: 4px;
+	outline: 1px solid #6C7275;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	&__minus {
+		cursor: pointer;
+		flex: 0 1 30px;
+		text-align: center;
+		transition: all 0.3s ease 0s;
+		&:hover{
+			background-color: #f4f4f4;
+		}
+		&:active{
+			background-color: #dddddd;
+		}
+	}
+	&__figure {
+	}
+	&__plus {
+		cursor: pointer;
+		flex: 0 1 30px;
+		text-align: center;
+		transition: all 0.3s ease 0s;
+		&:hover{
+			background-color: #f4f4f4;
+		}
+		&:active{
+			background-color: #dddddd;
+		}
+	}
+}
+.delete-item {
+	width: 24px;
+	height: 24px;
+	@include adaptiveValue("margin-top", 17, 12);
+	margin-left: auto;
+	svg path{
+		transition: all 0.3s ease 0s;
+	}
+	&:hover{
+		svg path{
+			fill: #000;
+		}
+	}
+}
+.close-flyout{
+	cursor: pointer;
+	 path{
+		transition: all 0.3s ease 0s;
+	}
+	&:hover{
+		 path{
+			fill: #000;
+		}
+	}
+}
+
+//? sum ====================================================================================================//
+
+.sum {
+	&__subtotal {
+		display: flex;
+		justify-content: space-between;
+		@include adaptiveValue("font-size", 18, 16);
+		padding: 13px 0px;
+		border-bottom: 1px solid #E8ECEF;
+		p:last-child{
+			font-weight: 600;
+		}
+	}
+	&__total {
+		display: flex;
+		justify-content: space-between;
+		padding: 13px 0px;
+		border-bottom: 1px solid #E8ECEF;
+		@include adaptiveValue("font-size", 24, 22);
+		font-family: $pop;
+		font-weight: 500;
+		p:last-child{
+			font-weight: 600;
+		}
+		@include adaptiveValue("margin-bottom", 20, 16);
+	}
+	&__button {
+		width: 100%;
+		padding: 10px 26px;
+		@include adaptiveValue("margin-bottom", 20, 15);
+	}
+	&__link {
+		text-align: center;
+		a{
+			font-size: 14px;
+			font-weight: 600;
+			transition: all 0.3s ease 0s;
+			&:hover{
+				color: #38CB89;
+			}
+		}
+	}
+}
+.button {
 }

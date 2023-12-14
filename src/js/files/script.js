@@ -147,3 +147,26 @@ viewPass.forEach(function (i) {
 		}
 	})
 })
+
+
+// flyout ====================================================================================================//
+
+let cartMenu = document.querySelector('.flyout')
+let wrapper = document.querySelector('.wrapper')
+
+// Open / Close Menu =================//
+
+document.addEventListener('click', function (e) {
+
+	if (e.target.closest('.manage-menu__cart')) {
+		cartMenu.classList.toggle('_active')
+		document.body.classList.add('_lock')
+		wrapper.classList.add('_active')
+	}
+
+	else if ((e.target.closest('.close-flyout')) || (!e.target.closest('.flyout')) || (e.target.closest('.sum__button'))) {
+		cartMenu.classList.remove('_active')
+		document.body.classList.remove('_lock')
+		wrapper.classList.remove('_active')
+	}
+})

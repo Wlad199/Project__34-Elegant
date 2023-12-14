@@ -193,11 +193,12 @@
 		display: flex;
 		gap: 8px;
 		flex-direction: row-reverse;
-		li{
-			opacity: 0.6;
-			transition: all 0.3s ease 0s;
-			&:hover{
-				opacity: 1;
+		@media (min-width: 767px) {
+			li{
+				filter: saturate(0);
+				&:hover{
+					filter: saturate(1);
+				}
 			}
 		}
 		@media (max-width: 992px) {
