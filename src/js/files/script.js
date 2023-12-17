@@ -164,10 +164,9 @@ document.addEventListener('click', function (e) {
 		wrapper.classList.add('_active')
 	}
 
-	else if ((e.target.closest('.close-flyout')) || (!e.target.closest('.flyout')) || (e.target.closest('.sum__button'))) {
+	else if ((e.target.closest('.close-flyout')) || ((!e.target.closest('.flyout')) && cartMenu.classList.contains('_active')) || (e.target.closest('.sum__button'))) {
 		cartMenu.classList.remove('_active')
 		document.body.classList.remove('_lock')
 		wrapper.classList.remove('_active')
 	}
 })
-
