@@ -170,3 +170,4 @@ document.addEventListener('click', function (e) {
 		wrapper.classList.remove('_active')
 	}
 })
+
