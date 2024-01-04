@@ -170,3 +170,50 @@ document.addEventListener('click', function (e) {
 		wrapper.classList.remove('_active')
 	}
 })
+
+// choose color ====================================================================================================//
+
+let colorItem = document.querySelectorAll('.color-descript__item')
+
+colorItem.forEach(function (i) {
+	i.addEventListener('click', function (e) {
+		colorItem.forEach(function (i) {
+			i.classList.remove('_active')
+		})
+		if (!i.classList.contains('_disabled')) {
+			i.classList.add('_active')
+		}
+	})
+})
+
+// wishlist ====================================================================================================//
+
+let addWish = document.querySelector('.wish-descript__add-wish')
+
+if (addWish) {
+	addWish.addEventListener('click', function () {
+		addWish.classList.toggle('_active')
+	})
+}
+
+
+// gooda-slider ====================================================================================================//
+
+$(document).ready(function () {
+	$('.visual-slider').slick({
+		slidesToShow: 1,
+		//autoplay: true, // автовоспроизведение (false)
+		autoplaySpeed: 2000, // скорость (3000)
+		pauseOnFocus: true, // остановка при фокусе
+		touchThreshold: 10, // расстояние для считывания свайпа (5 1/5 экрана)
+		//responsive: [
+		//	{
+		//		breakpoint: 768,
+		//		settings: {
+		//			dots: true, // точки
+		//		}
+		//	}
+		//],
+	});
+})
+

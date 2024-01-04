@@ -209,20 +209,49 @@
 		}
 }
 	
-	// arrivals ====================================================================================================//
-	
-	//.arrivals{
-	//	.slick-track{
-	//		//display: flex;
-	//	}
+	// slider-goods ====================================================================================================//
+
+	.goods-descript{
+
+		///* Ограничивающая оболочка */
+		.slick-list {
+			overflow: hidden;	//!!! Скрыть лишние слайды
+		}
+		///* Лента слайдов */
+		.slick-track{
+			display: flex;	//!!! Выстроить в ряд
+		}
 		
-	/////* Ограничивающая оболочка */
-	//.slick-list {
-	//	overflow: hidden;	//!!! Скрыть лишние слайды
-	//}
-	/////* Лента слайдов */
-	//.slick-track{
-	//	display: flex;	//!!! Выстроить в ряд
-	//}
-	
-	//}
+
+		/* Стрелки*/
+		.slick-arrow{
+			position: absolute;
+			top: 50%;
+			z-index: 10;
+			font-size: 0;
+			height: 55px;
+			width: 55px;
+			transition: all 0.5s ease 0s;
+			transform: translateY(-50%);
+			opacity: 1;
+			@media (max-width: 767px) {
+				width: 0;
+				height: 0;
+			}
+		}
+		/* Стрелка влево */
+		.slick-arrow.slick-prev{
+			@media (min-width: 767px) {
+				left: 15px;
+				background: url('@img/main-screen/icons/arrow-left.svg') -16px -7px no-repeat;
+			}
+		}
+		/* Стрелка вправо */
+		.slick-arrow.slick-next{
+			@media (min-width: 767px) {
+				right: 15px;
+				background: url('@img/main-screen/icons/arrow-right.svg') -16px -7px no-repeat;
+			}
+		}
+	}
+		
