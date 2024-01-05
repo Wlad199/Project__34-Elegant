@@ -31,7 +31,7 @@ flsScroll.headerScroll();
 //===================//
 
 // Плавная навигация по странице
-// flsScroll.pageNavigation();
+flsScroll.pageNavigation();
 //===================//
 
 /* Динамический адаптив */

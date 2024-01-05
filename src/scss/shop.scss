@@ -100,12 +100,13 @@
 		&__item {
 			padding: 8px 11px;
 			border: 1px solid #E8ECEF;
-			transition: all 0.3s ease 0s;
+			//transition: all 0.3s ease 0s;
 			&:hover{
 				background-color: #F3F5F7;
 			}
 			&._active{
-				background-color: #d1d9e0;
+				//background-color: #ebeef1;
+				background-color: #38cb89;
 			}
 		}
 }
@@ -217,6 +218,7 @@
 		}
 	}
 	.card-arrivals__button{
+		text-align: center;
 		@media (max-width: 600px) {
 			padding: 4px 10px;
 			width: 100%;

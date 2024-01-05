@@ -259,7 +259,7 @@ body._lock {
 		position: relative;
 		margin-right: 25px;
 		&::before{
-			content: '2';
+			content: '3';
 			font-size: 11px;
 			font-family: inter;
 			padding-top: 3px;
@@ -372,7 +372,7 @@ body._lock {
 			}
 		}
 	}
-	.form__button{
+	.form__button_s{
 		padding-left: 15px;
 	}
 	.menu__search{
@@ -395,7 +395,7 @@ body._lock {
 			top: 50%;
 			left: 50%;
 			transform: translate(-50%,-50%);
-			transition: width 0.7s;
+			transition: width 0.4s;
 			width: 40px;
 			height: 50px;
 			background: white;
@@ -443,6 +443,9 @@ body._lock {
 .menu__list{
 	li._active a{
 		color: #000;
+		&:hover{
+			color: #000;
+		}
 	}
 }
 
@@ -663,5 +666,44 @@ body._lock {
 		}
 	}
 }
-.button {
+
+// to-top ====================================================================================================//
+.header__container{
+	position: relative;
+}
+
+.to-top{
+	opacity: 0;
+	visibility: visible;
+	position: relative;
+	position: fixed;
+}
+
+.header._header-scroll .to-top{
+	svg{
+		position: absolute;
+		top: 30px;
+		left: 8px;
+		transition: all 0.3s ease 0.2s;
+	}
+	@media (min-width: 992px) {
+		display: block;
+		z-index: 9999;
+		width: 35px;
+		height: 60px;
+		bottom: 70px;
+		right: 50px;
+		margin-left: 15px;
+		background-color: #cfcfcf;
+		opacity: 0.4;
+		border-radius: 5px;
+		cursor: pointer;
+		transition: all 0.3s ease 0s;
+		&:hover{
+			opacity: 1;
+			svg{
+				top: 10px;
+			}
+		}
+	}
 }

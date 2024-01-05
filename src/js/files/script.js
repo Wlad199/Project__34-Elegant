@@ -7,8 +7,8 @@ import { flsModules } from "./modules.js";
 // Функционал слайдера-слик (MW 3.2)
 $(document).ready(function () {
 	$('.main-screen__body').slick({
-		//autoplay: true, // автовоспроизведение (false)
-		autoplaySpeed: 2000, // скорость (3000)
+		autoplay: true, // автовоспроизведение (false)
+		autoplaySpeed: 3000, // скорость (3000)
 		pauseOnFocus: true, // остановка при фокусе
 		touchThreshold: 10, // расстояние для считывания свайпа (5 1/5 экрана)
 		responsive: [
@@ -158,10 +158,10 @@ let wrapper = document.querySelector('.wrapper')
 
 document.addEventListener('click', function (e) {
 
-	if (e.target.closest('.manage-menu__cart')) {
+	if ((e.target.closest('.manage-menu__cart')) || (e.target.closest('#cart'))) {
 		cartMenu.classList.toggle('_active')
-		document.body.classList.add('_lock')
-		wrapper.classList.add('_active')
+		document.body.classList.toggle('_lock')
+		wrapper.classList.toggle('_active')
 	}
 
 	else if ((e.target.closest('.close-flyout')) || ((!e.target.closest('.flyout')) && cartMenu.classList.contains('_active')) || (e.target.closest('.sum__button'))) {

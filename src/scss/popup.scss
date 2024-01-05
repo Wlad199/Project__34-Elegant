@@ -101,28 +101,6 @@
 	}
 }
 
-//.sign-up__pass{
-//}
-
-//.sign-up__pass{
-//		position: relative;
-//		display: block;
-//		&::before{
-//			content: '';
-//			cursor: pointer;
-//			position: absolute;
-//			top: 5px;
-//			right: 0;
-//			//z-index: 10;
-//			height: 20px;
-//			width: 20px;
-//			background: url('@img/singUp/icons/eye.svg') 0 0px no-repeat;
-//		}
-//		input{
-//			padding-right: 25px;
-//		}
-//}
-
 .sign-up__pass{
 	position: relative;
 	input{
@@ -177,7 +155,7 @@
 		}
 		@media (max-width: 415px) {
 			&::before, &::after{
-				top: 6px;
+				top: 3px;
 			}
 		}
 		a{

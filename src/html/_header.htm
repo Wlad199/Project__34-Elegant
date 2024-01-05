@@ -5,12 +5,12 @@
 				<div class="menu__icon">
 					<span></span>
 				</div>
-				<a href="./goods.html" class="menu__logo">3legant.</a>
+				<a href="./index.html" class="menu__logo">3legant.</a>
 			</div>
 			<nav class="menu__body">
 				<ul class="menu__list">
 					<form class="menu__form" action="#">
-						<button type="submit" class="form__button">
+						<button type="submit" class="form__button_s">
 							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
 								<path d="M18.5 18.5L22 22M21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21C16.7467 21 21 16.7467 21 11.5Z" stroke="#141718" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 							</svg>
@@ -20,20 +20,14 @@
 					<li><a href="./index.html" class="menu-link">Home</a></li>
 					<li class="menu__item">
 						<a href="./shop.html" class="menu-link">Shop</a>
-						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-							<path d="M6.27246 9L12.2725 15L18.2725 9" stroke="#141718" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-						</svg>
 					</li>
 					<li class="menu__item">
 						<a href="./blog.html" class="menu-link">Our Blog</a>
-						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-							<path d="M6.27246 9L12.2725 15L18.2725 9" stroke="#141718" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-						</svg>
 					</li>
 					<li><a href="./contact.html" class="menu-link">Contact Us</a></li>
 				</ul>
 				<div class="menu__options options-menu">
-					<div class="options-menu__item">
+					<div id="cart" class="options-menu__item">
 						<p>Cart</p>
 						<p>
 							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -50,7 +44,7 @@
 							</svg>
 						</p>
 					</div>
-					<button class="options-menu__button button">Sign In</button>
+					<button data-popup="#signIn" class="options-menu__button button">Sign In</button>
 					<div class="options-menu__social">
 						<a href="#">
 							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -211,5 +205,12 @@
 				<div class="sum__link"><a href="#">View Cart</a></div>
 			</div>
 		</div>
+	</div>
+	<div class="to-top" data-goto=".page" data-goto-top="80">
+		<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M9.99999 15.8333V4.16659" stroke="#6C7275" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+			<path d="M15 9.16675L9.99999 4.16675" stroke="#6C7275" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+			<path d="M5 9.16675L10 4.16675" stroke="#6C7275" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+			</svg>
 	</div>
 </header>
