@@ -117,20 +117,6 @@ itemHeaderMenu[1].classList.add('_active')
 */
 
 // show pass ====================================================================================================//
-/*
-let viewPass = document.querySelector('.pass-view')
-let passInput = document.querySelector('#pass-input')
-
-viewPass.addEventListener('click', function (e) {
-	if (passInput.getAttribute('type') === 'password') {
-		viewPass.classList.add('_view')
-		passInput.setAttribute('type', 'text')
-	} else {
-		viewPass.classList.remove('_view')
-		passInput.setAttribute('type', 'password')
-	}
-})
-*/
 
 let viewPass = document.querySelectorAll('.pass-view')
 //let passInput = document.querySelector('#pass-input')
@@ -165,11 +151,25 @@ document.addEventListener('click', function (e) {
 	}
 
 	else if ((e.target.closest('.close-flyout')) || ((!e.target.closest('.flyout')) && cartMenu.classList.contains('_active')) || (e.target.closest('.sum__button'))) {
-		cartMenu.classList.remove('_active')
-		document.body.classList.remove('_lock')
-		wrapper.classList.remove('_active')
+		if (!e.target.closest('.wish-descript__button')) {
+			cartMenu.classList.remove('_active')
+			document.body.classList.remove('_lock')
+			wrapper.classList.remove('_active')
+		}
 	}
 })
+
+// Open on addCart ======================//
+const addCart = document.querySelector('.wish-descript__button')
+
+if (addCart) {
+	addCart.addEventListener('click', function () {
+		cartMenu.classList.add('_active')
+		document.body.classList.add('_lock')
+		wrapper.classList.add('_active')
+	})
+}
+
 
 // choose color ====================================================================================================//
 
@@ -206,14 +206,60 @@ $(document).ready(function () {
 		autoplaySpeed: 2000, // скорость (3000)
 		pauseOnFocus: true, // остановка при фокусе
 		touchThreshold: 10, // расстояние для считывания свайпа (5 1/5 экрана)
-		//responsive: [
-		//	{
-		//		breakpoint: 768,
-		//		settings: {
-		//			dots: true, // точки
-		//		}
-		//	}
-		//],
 	});
 })
+
+
+// counter goods ====================================================================================================//
+
+window.addEventListener('click', function (e) {
+
+	if ((e.target.closest('[data-action="plus"]')) || (e.target.closest('[data-action="minus"]'))) {
+
+		const counterWrapper = e.target.closest('.counter')
+		const counter = counterWrapper.querySelector('[data-counter]')
+
+		if (e.target.closest('[data-action="plus"]')) {
+			counter.innerText = ++counter.innerText
+		}
+
+		if (e.target.closest('[data-action="minus"]')) {
+			if (parseInt(counter.innerText) > 1) {
+				counter.innerText = --counter.innerText
+			}
+		}
+	}
+	if (e.target.closest('.delete-item')) {
+		const itemCart = e.target.closest('.flyout__item')
+		itemCart.remove()
+		calcCartPrice()
+	}
+
+	if (e.target.closest('[data-action]') && e.target.closest('.flyout__cart')) {
+		calcCartPrice()
+	}
+})
+
+// Calc Sum ====================================================================================================//
+
+function calcCartPrice() {
+	const cartWrapper = document.querySelector('.flyout__cart')
+	const cartItems = cartWrapper.querySelectorAll('.flyout__item')
+	const previousPrice = document.querySelector('.previous-price')
+	const lastPrice = document.querySelector('.last-price')
+
+	let totalPrice = 0;
+
+	cartItems.forEach(function (i) {
+		const amountEl = i.querySelector('[data-counter]')
+		const priceEl = i.querySelector('.item-flyout__price p')
+		const currentPrice = parseFloat(amountEl.innerText) * parseFloat(priceEl.innerText)
+
+		totalPrice += currentPrice;
+	})
+
+	previousPrice.innerText = (totalPrice).toFixed(2) + ' ' + '$'
+	lastPrice.innerText = (totalPrice * 0.85).toFixed(2) + ' ' + '$'
+}
+calcCartPrice()
 

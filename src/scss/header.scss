@@ -475,6 +475,7 @@ body._lock {
 	max-width: 520px;
 	z-index: 6;
 	overflow: auto;
+	min-width: 300px;
 	&__body {
 		padding: 40px 24px;
 		position: relative;
